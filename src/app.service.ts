@@ -20,7 +20,7 @@ export class AppService {
       //validaciones
       if (body['message'] != undefined && body['message'].length != 0) {
         //escritura del mensaje
-        bd.push({ "id": bd.length + 1, "message": body['message'], "createAt": new Date('2/1/22') })
+        bd.push({ "id": bd.length + 1, "message": body['message'], "createAt": new Date() })
         fs.writeFile('bd.json', JSON.stringify(bd), (err) => {
           if (err) throw "error";
           console.log('mensaje guardado');
@@ -30,6 +30,5 @@ export class AppService {
       return "Error escribiendo los datos"
     }
     return bd
-
   }
 }
